@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <py-script>
+        equal = "=================="
+        title = " TOKO KELAS 1D"
+        n = "\n"
+        print(equal,n,title,n,equal);
+
+        prod1 = "If Else Kopyor"
+        price1 = 3000
+        prod2 = "Siomay PDI"
+        price2 = 5000
+
+        print("Pilihan produk : ");
+        print("1. {} Rp. {}".format(prod1,price1));
+        print("2. {} Rp. {}".format(prod2,price2));
+        print(equal);
+
+        pilih = int(input(""));
+        if pilih == 1:
+            print("Pilihan produk : {}".format(pilih));
+            juml = int(input(""));
+            print("Jumlah : {}".format(juml));
+            juml *= price1
+            print("Total : Rp. {}".format(juml));
+            bayar = int(input(""));
+            print("Bayar : {}".format(bayar));
+            kembalian = bayar-juml
+            print("Kembalian : Rp. {}".format(kembalian));
+        elif pilih == 2:
+            print("Pilihan produk : {}".format(pilih));
+            juml = int(input(""));
+            print("Jumlah : {}".format(juml));
+            juml *= price1
+            print("Total : Rp. {}".format(juml));
+            bayar = int(input(""));
+            print("Bayar : {}".format(bayar));
+            kembalian = bayar-juml
+            print("Kembalian : Rp. {}".format(kembalian));
+    </py-script>
+</body>
+
+</html>
