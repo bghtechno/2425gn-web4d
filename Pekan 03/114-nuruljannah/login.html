@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8c8dc; /* Pink soft */
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #a64d79;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #833c62;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form onsubmit="return login()">
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Masuk</button>
+        </form>
+        <button onclick="location.href='profil.html'">Kembali ke Profil</button>
+    </div>
+
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "1234") {
+                alert("Login berhasil!");
+                window.location.href = "dashboard.html";
+                return false;
+            } else {
+                alert("Username atau password salah!");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
