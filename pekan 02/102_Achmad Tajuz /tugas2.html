@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Web</title>
+    <style>
+        /* Reset margin dan padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya untuk body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fcff;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            background-color: #147cb4;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Navigasi */
+        .nav {
+            background-color: #0f99a5;
+            padding: 10px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        .nav a:hover {
+            background-color: #3a88d2;
+            border-radius: 5px;
+        }
+
+        /* Hero Section (Gambar landscape) */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background-color: black;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Overlay lebih terang */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.6); /* Latar belakang transparan untuk teks */
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Kontainer utama */
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #448dd7;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <div class="nav">
+        <a href="#">Beranda</a>
+        <a href="#">Tentang</a>
+        <a href="#">Galeri</a>
+        <a href="#">Kontak</a>
+    </div>
+
+    <!-- Hero Section dengan gambar landscape dan teks di tengah -->
+    <div class="hero">
+        <img src="tajuz.png" alt="Gambar Utama">
+        <div class="overlay">
+            <h2>Selamat Datang di Halaman Web achmad tajuz zubqi</h2>
+        </div>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <h2>Tentang Website Ini</h2>
+        <p>Ini adalah website tentang data profil saya,saya sendiri mahasiswi di kampus UTM dengan Program Studi Pendidikan Informatika</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>ACHMAD TAJUZ ZUBQI_102_PENDIDIKAN INFORMATIKA</p>
+    </div>
+
+</body>
+</html>
