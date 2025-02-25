@@ -2842,7 +2842,7 @@ if __name__ == "__main__":
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")
 
-"""
+
 class Node:
     def __init__(self, task, is_completed=False):
         
@@ -3214,8 +3214,7 @@ if __name__ == "__main__":
             break  # Keluar dari program
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")  # Pesan jika pilihan tidak valid
-"""
-"""
+
 # Definisi kelas Node untuk merepresentasikan node dalam linked list
 class Node:
     def __init__(self, data):
@@ -3293,4 +3292,3 @@ if __name__ == "__main__":
             break  # Keluar dari program
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")  # Pesan jika pilihan tidak valid
-"""
