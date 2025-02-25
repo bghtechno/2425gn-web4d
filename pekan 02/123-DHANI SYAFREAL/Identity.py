@@ -2260,3 +2260,474 @@ list_a = range(1, 10, 2)
 x = [[a**2, a**3] for a in list_a]
 print(x)
 
+# Class
+# Definisi dari kelas menggunakan sintaksis class
+# seperti halnya definisi fungsi yang menggunakan sintaksis def
+class NamaKelas:
+    pass  # gantikan dengan pernyataan-pernyataan,
+    # misal: atribut atau metode
+
+
+# Class support dua macam operasi
+# 1. Mengacu pada atribut.
+# 2. Pembuatan instance atau dalam bahasa Inggris disebut instantiation.
+class Kalkulator:
+    """contoh kelas kalkulator sederhana"""
+
+    i = 12345  # def attr i
+
+    def f(self):  # def func i
+        return "hello world"
+
+
+Kalkulator.i = (
+    1024  # maka nilai atribut i dalam Kalkulator berubah dari 12345 menjadi 1024
+)
+
+
+# Objek (object: an instance of a class)
+k = (
+    Kalkulator()
+)  # membuat instance dari kelas jadi objek, kemudian disimpan pada variabel k
+
+print(k.f())  # akan mencetak hello world ke layar
+
+
+# Class’ Constructor
+# fungsi khusus atau metode sebagai constructor ini bernama __init__ atau
+# biasa diucapkan sebagai "double underscore init". Pada saat dilakukan
+# instantiation dari class, metode __init__ ini secara otomatis akan dipanggil
+# terlebih dahulu.
+
+# definisi class Kalkulator di atas jika diubah dengan menggunakan constructor.
+class Kalkulator:
+    """contoh kelas kalkulator sederhana"""
+
+    def __init__(self):
+        self.i = 12345
+
+    def f(self):
+        return "hello world"
+
+
+class KeranjangBelanja:
+    """contoh tidak baik dilakukan dengan definisi variabel terbagi"""
+
+    isi = (
+        []
+    )  # menggunakan list di sini akan terbagi untuk semua instance. JANGAN DILAKUKAN
+
+
+# dengan dilengkapi constructor pun proses instantiation tidak berubah dari sebelumnya.
+k = (
+    Kalkulator()
+)  # membuat instance dari kelas jadi objek, kemudian disimpan pada variabel k
+
+# constructor memiliki parameter i yang bersifat opsional, apabila dalam proses instantiation
+# tidak dikirimkan parameter, secara otomatis i akan diisi nilai bawaan 12345.
+class Kalkulator:
+    """contoh kelas kalkulator sederhana"""
+
+    def __init__(self, i=12345):
+        self.i = (
+            i  # i adalah variabel pada constructor, self.i adalah variabel dari class
+        )
+
+    def f(self):
+        return "hello world"
+
+
+k = Kalkulator(i=1024)  # melakukan instantiation sekaligus mengisi atribut i jadi 1024
+print(k.i)  # mencetak atribut i dari objek k dengan keluaran nilai 1024
+
+# Metode (Method)
+# - Metode dari objek (object method)
+# - Metode dari class (class method)
+# - Metode secara static (static method)
+
+# untuk sebuah metode, sebetulnya dikirimkan objek (hasil instance dari class)
+# sebagai argumen pertamanya, dalam hal ini bernama self.
+k.f()
+# ekuivalen dengan
+Kalkulator.f(k)
+
+# fungsi decorator adalah sebuah fungsi yang mengembalikan fungsi lain,
+# biasanya digunakan sebagai fungsi transformasi dengan "pembungkus" sintaksis @wrapper.
+
+# Class method adalah sebuah fungsi yang mengubah metode menjadi metode dari class (class method).
+# Metode dari class (class method) menerima masukan class secara implisit sebagai
+# argumen pertama yang secara konvensi diberikan nama cls.
+class Kalkulator:
+    """contoh kelas kalkulator sederhana"""
+
+    def f(self):
+        return "hello world"
+
+    @classmethod
+    def tambah_angka(cls, angka1, angka2):
+        return "{} + {} = {}".format(angka1, angka2, angka1 + angka2)
+
+
+# pemanggilan dari class
+Kalkulator.tambah_angka(1, 2)  # tanpa perlu memberikan masukan untuk argumen cls
+
+# pemanggilan metode dari objek
+k = Kalkulator()
+print(k.tambah_angka(1, 2))
+
+# Staticmethod adalah sebuah fungsi yang mengubah metode menjadi metode statis (static method).
+# Metode statis (static method) tidak menerima masukan argumen pertama secara implisit.
+
+# metode statis
+class Kalkulator:
+    """contoh kelas kalkulator sederhana"""
+
+    def f(self):
+        return "hello world"
+
+    @staticmethod
+    def kali_angka(angka1, angka2):
+        return "{} x {} = {}".format(angka1, angka2, angka1 * angka2)
+
+
+# Pemanggilan dari class
+a = Kalkulator.kali_angka(2, 3)
+print(a)
+
+# Pemanggilan dari objek
+k = Kalkulator()
+a = k.kali_angka(2, 3)
+print(a)
+
+
+# Mekanisme Pewarisan (Inheritance)
+# Paradigma Pemrograman Berorientasi Objek memiliki konsep pewarisan atau
+# dalam bahasa Inggris disebut inheritance
+class Kalkulator:
+    """contoh kelas kalkulator sederhana. anggap kelas ini tidak boleh diubah!"""
+
+    def __init__(self, nilai=0):
+        self.nilai = nilai
+
+    def tambah_angka(self, angka1, angka2):
+        self.nilai = angka1 + angka2
+        if self.nilai > 9:  # kalkulator sederhana hanya memroses sampai 9
+            print("kalkulator sederhana melebihi batas angka: {}".format(self.nilai))
+        return self.nilai
+
+
+# membuat class KalkulatorKali yang mewarisi class Kalkulator
+class KalkulatorKali(Kalkulator):
+    """contoh mewarisi kelas kalkulator sederhana"""
+
+    def kali_angka(self, angka1, angka2):
+        self.nilai = angka1 * angka2
+        return self.nilai
+
+
+# pemanggilan class KalkulatorKali
+kk = KalkulatorKali()
+a = kk.kali_angka(2, 3)  # sesuai dengan definisi class memiliki fitur kali_angka
+print(a)
+
+b = kk.tambah_angka(5, 6)  # memiliki fitur tambah_angka karena mewarisi dari Kalkulator
+print(b)
+
+# Menimpa (Override) Metode dengan Nama yang Sama Dengan Kelas Dasar
+
+# menimpa metode tambah_angka untuk menghilangkan batasan yang dimiliki.
+class KalkulatorKali(Kalkulator):
+    """contoh mewarisi kelas kalkulator sederhana"""
+
+    def kali_angka(self, angka1, angka2):
+        self.nilai = angka1 * angka2
+        return self.nilai
+
+    def tambah_angka(self, angka1, angka2):
+        self.nilai = angka1 + angka2
+        return self.nilai
+
+
+kk = KalkulatorKali()
+
+b = kk.tambah_angka(5, 6)  # fitur tambah_angka yang dipanggil milik KalkulatorKali
+print(b)
+
+
+# Pemanggilan Metode Kelas Dasar dari Kelas Turunan dengan Sintaksis Super
+# Ubah sebagian fitur
+class KalkulatorTambah(Kalkulator):
+    """contoh mewarisi kelas kalkulator sederhana"""
+
+    def tambah_angka(self, angka1, angka2):
+        if (
+            angka1 + angka2 <= 9
+        ):  # fitur ini sudah oke di kelas dasar, gunakan yang ada saja
+            super().tambah_angka(
+                angka1, angka2
+            )  # panggil fungsi dari Kalkulator lalu isi nilai
+        else:  # ini adalah fitur baru yang ingin diperbaiki dari keterbatasan kelas dasar
+            self.nilai = angka1 + angka2
+        return self.nilai
+
+
+# Variabel Privat di Python
+# di Python ada konvensi dimana penggunaan nama yang diawali dengan garis bawah (underscore),
+# baik itu fungsi, metode, maupun anggota data, akan dianggap sebagai non-publik.
+
+
+# Pernak-Pernik Terkait Struktur Data
+# cukup mendefinisikan saja sebuah class kosong, selanjutnya penamaan item data dapat
+# secara langsung didefinisikan dan diisikan saat sudah instantiation.
+class Pegawai:
+    pass  # definisi class kosong
+
+
+don = Pegawai()  # membuat Pegawai baru menjadi objek bernama don
+
+# tambahkan item data pada objek sebagai record
+don.nama = "Don Doo"
+don.bagian = "IT"
+don.gaji = 999
+
+# Menampilkan Hello World
+print("Hello World")
+
+# perhitungan 2 angka
+print("="*10, "Perhitungan 2 angka", "="*10)
+angka1 = int(input("Masukkan angka pertama \t\t: "))
+angka2 = int(input("Masukkan angka kedua \t\t: "))
+operat = input("Masukkan lambang operator \t: ")
+
+if operat == "+":
+    hasil = angka1 + angka2
+    print("{} + {} = {}".format(angka1, angka2, hasil))
+elif operat == "-":
+    hasil = angka1 - angka2
+    print("{} - {} = {}".format(angka1, angka2, hasil))
+elif operat == "*":
+    hasil = angka1 * angka2
+    print("{} * {} = {}".format(angka1, angka2, hasil))
+elif operat == "/":
+    hasil = angka1 / angka2
+    print("{} / {} = {}".format(angka1, angka2, hasil))
+else:
+    print("\nMohon isi dengan benar!")
+
+# Akar kuadrat
+num = int(input("Masukkan angka : √"))
+numm = num
+# fungsi
+numm **= 0.5
+print("Akar kuadrat √%0.0f adalah %0.1f" % (num, numm))
+
+# Luas segitiga
+print("Luas Δ")
+alas = int(input("Masukkan alas segitiga \t\t: "))
+tinggi = int(input("Masukkan tinggi segitiga \t: "))
+# rumus l = 1/2*a*t dan K = sisi
+luas = 0.5 * (alas * tinggi)
+print("Luas Δ dengan alas {} dan tinggi {} adalah {}".format(alas, tinggi, luas))
+
+# Program perhitungan segitiga Δ
+line = "="
+print("\nProgram perhitungan Δ sama sisi, sama kaki, sembarang")
+
+sisi1 = int(input("\nMasukkan panjang sisi ke A \t: "))
+sisi2 = int(input("Masukkan panjang sisi ke B \t: "))
+sisi3 = int(input("Masukkan panjang sisi ke C \t: "))
+
+if sisi1 == sisi2 == sisi3:
+    print("\nTeridentifikasi sebagai Δ sama sisi")
+    # mencari tinggi Δ sama sisi
+    sisi11 = sisi1*0.5
+    tinggi = (sisi2**2) - (sisi11**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: %0f" % (tinggi))
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi1+sisi2+sisi3
+    print(line, "\tKeliling\t: %0.0f" % (keliling))
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi1
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: %0f" % (luas))
+
+elif sisi1 != sisi2 == sisi3:
+    print("\nTeridentifikasi sebagai Δ sama kaki")
+    # mencari tinggi Δ sama kaki
+    sisi11 = sisi1*0.5
+    tinggi = (sisi2**2) - (sisi11**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: %0f" % (tinggi))
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi1+sisi2*2
+    print(line, "\tKeliling\t: %0.0f" % (keliling))
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi1
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: %0f" % (luas))
+
+elif sisi1 == sisi3 != sisi2:
+    print("\nTeridentifikasi sebagai Δ sama kaki")
+    # mencari tinggi Δ sama kaki
+    sisi22 = sisi2*0.5
+    tinggi = (sisi1**2) - (sisi22**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: %0f" % (tinggi))
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi2+sisi1*2
+    print(line, "\tKeliling\t: %0.0f" % (keliling))
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi2
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: %0f" % (luas))
+
+elif sisi1 == sisi2 != sisi3:
+    print("\nTeridentifikasi sebagai Δ sama kaki")
+    # mencari tinggi Δ sama kaki
+    sisi33 = sisi3*0.5
+    tinggi = (sisi1**2) - (sisi33**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: %0f" % (tinggi))
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi3+sisi1*2
+    print(line, "\tKeliling\t: %0.0f" % (keliling))
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi3
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: %0f" % (luas))
+
+elif sisi1 != sisi2 != sisi3:
+    print("\nTeridentifikasi sebagai Δ sembarang")
+    # mencari keliling Δ sembarang rumus k=sisi1+sisi2+sisi3
+    keliling = sisi1+sisi2+sisi3
+    print(line, "\tKeliling\t: %0.0f" % (keliling))
+    # mencari luas Δ sembarang 
+    # rumus s=(a+b+c)/2 dan l=(s(s-a)(s-b)(s-c))**0.5
+    a = sisi1
+    b = sisi2
+    c = sisi3
+    s = (a+b+c)/2
+    luas = (s*(s-a)*(s-b)*(s-c))
+    luas **= 0.5
+    print(line, "\tLuas \t\t: %0f" % (luas))
+    # mencari tinggi Δ sembarang
+    #tinggi = input("sisi yang manakah untuk dijadikan alas? A/B/C :")
+    #if tinggi == "A":
+
+else:
+    print("\nError!... ")
+    print("Inputkan nilai dengan benar")
+
+# Program kalkulator sederhana
+calc = input("Masukkan simbol operasi yang di inginkan (ex: + - * /) : ")
+
+if calc == "+":
+    num1 = int(input("Angka ke 1 : "))
+    num2 = int(input("Angka ke 2 : "))
+    result = num1 + num2
+    print("{} + {} = {}".format(num1, num2, result))
+elif calc == "-":
+    num1 = int(input("Angka ke 1 : "))
+    num2 = int(input("Angka ke 2 : "))
+    result = num1 - num2
+    print("{} - {} = {}".format(num1, num2, result))
+elif calc == "*":
+    num1 = int(input("Angka ke 1 : "))
+    num2 = int(input("Angka ke 2 : "))
+    result = num1 * num2
+    print("{} * {} = {}".format(num1, num2, result))
+elif calc == "/":
+    num1 = int(input("Angka ke 1 : "))
+    num2 = int(input("Angka ke 2 : "))
+    result = num1 / num2
+    print("{} / {} = {}".format(num1, num2, result))
+
+"""
+elif sisi1 != sisi2 == sisi3:
+    print("\nTeridentifikasi sebagai Δ sama kaki")
+    #Struktur Perulangan
+    for i in range(6):
+        spasi = " "*(6-i)
+        bintang = "*" * (2*i+1)
+        print(spasi,bintang)
+    print(line)
+    # mencari tinggi Δ sama kaki
+    sisi11 = sisi1*0.5
+    tinggi = (sisi2**2) - (sisi11**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: ",tinggi)
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi1+sisi2*2
+    print(line, "\tKeliling\t: ",keliling)
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi1
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: ",luas)
+
+elif sisi1 == sisi3 != sisi2:
+    print("\nTeridentifikasi sebagai Δ sama kaki")
+    for i in range(6):
+        spasi = " "*(6-i)
+        bintang = "*" * (2*i+1)
+        print(spasi,bintang)
+    print(line)
+    # mencari tinggi Δ sama kaki
+    sisi22 = sisi2*0.5
+    tinggi = (sisi1**2) - (sisi22**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: ",tinggi)
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi2+sisi1*2
+    print(line, "\tKeliling\t: ",keliling)
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi2
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: ",luas)
+
+elif sisi1 == sisi2 != sisi3:
+    print("\nTeridentifikasi sebagai Δ sama kaki")
+    #Struktur Perulangan
+    for i in range(6):
+        spasi = " "*(6-i)
+        bintang = "*" * (2*i+1)
+        print(spasi,bintang)
+    print(line)
+    # mencari tinggi Δ sama kaki
+    sisi33 = sisi3*0.5
+    tinggi = (sisi1**2) - (sisi33**2)
+    tinggi **= 0.5  # **0.5 == akar kuadrat
+    print(line, "\tTinggi \t\t: ",tinggi)
+    # mencari keliling Δ sama sisi rumus k=sisi1+sisi2+sisi3
+    keliling = sisi3+sisi1*2
+    print(line, "\tKeliling\t: ",keliling)
+    # mencari luas Δ sama sisi rumus l=1/2*a*t
+    alas = sisi3
+    luas = 0.5 * alas * tinggi
+    print(line, "\tLuas \t\t: ",luas)
+
+elif sisi1 != sisi2 != sisi3:
+    print("\nTeridentifikasi sebagai Δ sembarang")
+    #Struktur Perulangan
+    for i in range(4):
+        spasi = " "*(4-i)
+        bintang = "* " * (2*i+1)
+        print(spasi,bintang)
+    print(line)
+    # mencari keliling Δ sembarang rumus k=sisi1+sisi2+sisi3
+    keliling = sisi1+sisi2+sisi3
+    print(line, "\tKeliling\t: ",keliling)
+    # mencari luas Δ sembarang 
+    # rumus s=(a+b+c)/2 dan l=(s(s-a)(s-b)(s-c))**0.5
+    a = sisi1
+    b = sisi2
+    c = sisi3
+    s = (a+b+c)/2
+    luas = (s*(s-a)*(s-b)*(s-c))
+    luas **= 0.5
+    print(line, "\tLuas \t\t: ",luas)
+    # mencari tinggi Δ sembarang
+    #tinggi = input("sisi yang manakah untuk dijadikan alas? A/B/C :")
+    #if tinggi == "A":
+"""
+
