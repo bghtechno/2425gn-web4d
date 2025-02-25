@@ -912,3 +912,1351 @@ kekuatanMonster = [100, 50, 20, 500, 10]
 
 hasil = levelMax(level, kekuatanMonster)
 print(hasil)
+
+# 2 Casting dan Type Data
+print("----------INTEGER----------")
+data_int = 10
+# menyatakan bilangan bulat
+data_float = float(data_int)
+data_str = str(data_int)
+data_bool = bool(data_int)  # akan false bila int bernilai nol(0)
+print("Data =", data_int, ",type =", type(data_int))
+print("Data =", data_float, ",type =", type(data_float))
+print("Data =", data_str, ",type =", type(data_str))
+print("Data =", data_bool, ",type =", type(data_bool), ("\n"))
+
+# 2.1 Casting dan Type Data
+print("----------FLOAT----------")
+data_float = 10.8
+# menyatakan bilangan yang mempunyai koma
+data_int = int(data_float)  # akan dibulatkan ke bawah
+data_str = str(data_float)
+data_bool = bool(data_float)  # akan false bila float bernilai nol(0)
+print("Data =", data_float, ",type =", type(data_float))
+print("Data =", data_int, ",type =", type(data_int))
+print("Data =", data_str, ",type =", type(data_str))
+print("Data =", data_bool, ",type =", type(data_bool), ("\n"))
+
+# 2.2 Casting dan Type Data
+print("----------STRING----------")
+data_str = 10
+# menyatakan karakter/kalimat bisa berupa huruf, angka dll (diapit tanda " atau ')
+data_int = int(data_str)  # akan dibulatkan ke bawah
+data_float = float(data_str)  # akan false bila float bernilai nol(0)
+data_bool = bool(data_str)
+print("Data =", data_str, ",type =", type(data_str))
+print("Data =", data_int, ",type =", type(data_int))
+print("Data =", data_float, ",type =", type(data_float))
+print("Data =", data_bool, ",type =", type(data_bool), ("\n"))
+
+# 2.3 Casting dan Type Data
+print("----------BOOLEAN----------")
+data_bool = True
+# menyatakan benar True yang bernilai 1, atau salah False yang bernilai 0
+data_int = int(data_bool)  # akan dibulatkan ke bawah
+data_float = float(data_bool)
+data_str = bool(
+    data_bool
+)  # akan false bila bool bernilai nol(0) dan true bila bool bernilai selain nol
+print("Data =", data_bool, ",type =", type(data_bool))
+print("Data =", data_int, ",type =", type(data_int))
+print("Data =", data_float, ",type =", type(data_float))
+print("Data =", data_str, ",type =", type(data_str), ("\n"))
+
+# 2.4 Type Data
+print("----------List----------")
+data_list = ["x", 1, "y", 11]
+# menggunakan brackets[],
+# data untaian yang menyimpan berbagai tipe data dan isinya bisa berubah-ubah
+print(f"data = {data_list} -> type = {type(data_list)}\n")
+
+# 2.5 Type Data
+print("----------Tuple----------")
+data_tuple = ("x", 1, "y", 11)
+# menggunakan parentheses(),
+# data untaian yang menyimpan berbagai tipe data dan isinya tidak bisa diubah
+print(f"data = {data_tuple} -> type = {type(data_tuple)}\n")
+
+# 2.6 Type Data
+print("----------Complex----------")
+data_complex = 100j
+# menyatakan pasangan angka real dan imajiner
+print(f"data = {data_complex} -> type = {type(data_complex)}\n")
+
+# 2.7 Type Data
+print("----------Range----------")
+data_range = range(1, 11, 111)
+# hanya berisi bilangan bulat(integer(int))
+print(f"data = {data_range} -> type = {type(data_range)}\n")
+
+# 2.8 Type Data
+print("----------Dictionary----------")
+data_dictionary = {"name": "Bill", "age": 20}
+print(f"data = {data_dictionary} -> type = {type(data_dictionary)}\n")
+
+# 2.9 Type Data
+print("----------Set----------")
+data_set = {11, "z", 1.1, "a", 1.11}
+print(f"data = {data_set} -> type = {type(data_set)}\n")
+
+# 2.1.0 Type Data
+print("----------Frozenset----------")
+data_frozenset = frozenset({11, "z", 1.1, "a", 1.11})
+print(f"data = {data_frozenset} -> type = {type(data_frozenset)}\n")
+
+# 2.1.1 Type Data
+print("----------Bytes----------")
+data_bytes = b"Hello World"
+print(f"data = {data_bytes} -> type = {type(data_bytes)}\n")
+
+# 2.1.2 Type Data
+print("----------Bytearray----------")
+data_bytearray = bytearray(5)
+print(f"data = {data_bytearray} -> type = {type(data_bytearray)}\n")
+
+# 2.1.3 Type Data
+print("----------Memoryview----------")
+data_memoryview = memoryview(bytes(5))
+print(f"data = {data_memoryview} -> type = {type(data_memoryview)}\n")
+
+# Numbers, string, boolean
+a = 10
+print(a, "bertipe", type(a))
+b = 1.7
+print(b, "bertipe", type(b))
+c = 1 + 2j
+print(c, " Bertipe bilangan kompleks? ", isinstance(1 + 2j, complex))
+
+#
+x = [0] * 10005
+# inisialisasi array 0 sebanyak 10005; x[0]=0
+x[1] = 1
+# x[1]=1
+
+for j in range(2, 10001):
+    x[j] = x[j - 1] + x[j - 2]  # Fibonacci
+print(x[10000])
+
+#
+b = 0.1234567890123456789
+print(b)
+
+a = 1234567890123456789
+print(a)
+
+c = 1 + 5j
+print(c)
+
+s = """Ini adalah string
+yang memiliki baris pertama
+dan selanjutnya baris kedua"""
+
+# List
+x = [5, 10, 15, 20, 25, 30, 35, 40]
+print(x[5])
+print(x[-1])
+print(x[3:5])
+print(x[:5])
+print(x[-3:])
+print(x[1:7:2])
+
+x = [1, 2, 3]
+x[2] = 4
+print(x)
+
+x = [1, 2, 3]
+x[2] = 4
+x.append(5)
+print(x)
+
+binatang = ["kucing", "rusa", "badak", "gajah"]
+del binatang[2]
+print(binatang)
+
+list1 = ["Dhani", 123, "Syafreal", 231, 321]
+
+# print(list1)
+
+# print(list1[2])
+
+jumlList1 = len(list1)
+# print(jumlList1)
+
+for i in list1:
+    print(i)
+
+x = [1, 2, 3]
+x[2] = 4
+x.append(5)
+print(x)
+
+iterasi = 0
+for i in range(len(list1)):
+    print("Nomor", iterasi, "ke-", i)
+    iterasi += 1
+
+genap = []
+ganjil = []
+
+num = 20
+for i in range(num + 1):
+    if i % 2 == 0:
+        genap.append(i)
+    elif i % 2 == 1:
+        ganjil.append(i)
+
+print(genap)
+print(ganjil)
+
+# Slicing
+s = "Hello World!"
+print(s[4])  # ambil karakter kelima dari string s
+print(s[6:11])  # ambil karakter ketujuh hingga sebelas dari string s
+s[5] = (
+    "d"  # ubah karakter keenam dari string s menjadi "d", seharusnya gagal karena immutable
+)
+s = "Halo Dunia!"  # ubah isi string s menjadi "Halo Dunia!", seharusnya berhasil karena mutable
+print(s)
+
+# Tuple (tuple tidak dapat melakukan perubahan)
+t = (5, "program", 1 + 3j)
+print(t[1])
+print(t[0:3])
+# print(t[0]=10)
+
+# Set (Unordered)
+a = {1, 2, 2, 3, 3, 3}
+print(a)
+# Karena set bersifat unordered,
+# maka kita tidak bisa mengambil sebagian data /
+# elemen datanya menggunakan proses slicing
+a = {1, 2, 3}
+print(a[1])
+
+# Dictionary
+d = {1: "value", "key": 2}
+print(type(d))
+
+d = {1: "value", "key": 2}
+print(type(d))
+print("d[1] = ", d[1])
+print("d['key'] = ", d["key"])
+
+# Stack
+"""
+stack() inisialisasi stack yang kosong
+push(data) penambahan data baru pada stack di posisi top
+pop() menghapus data pada stak di posisi top
+peek() informasi data uang terletak pada posisi top
+isEmpty() untuk memeriksa apakah stack dalam keadaan kosong
+size() informasi jumlah data yang terdapat pada stack
+"""
+
+
+def stack():
+    s = []
+    return s
+
+
+def push(s, data):
+    s.append(data)
+
+
+def pop(s):
+    data = s.pop()
+    return data
+
+
+def peek(s):
+    # return (s[Len(s)-1])
+    return s[-1]
+
+
+def isEmpty(s):
+    return s == []
+
+
+def size(s):
+    return len(s)
+
+
+data = stack()
+print(data)
+
+# coba bikin code untuk membalik kata (reversing word)
+
+a = "dhani"
+hasil = ""
+for i in range(len(a) - 1, -1, -1, -1, -1):
+    print(a)
+    hasil = hasil + a[i]
+
+print(hasil)
+
+# aku = stack("dhani")
+
+# “if it walks like a duck and it quacks like a duck,
+# then it must be a duck”
+# (Jika sesuatu berjalan seperti bebek dan bersuara seperti bebek,
+# maka kemungkinan besar ia adalah bebek).
+10  #
+print("----------INTRODUCTION----------")
+nama = "Dhani Syafreal"
+kelas = "XI-TKJ 1"
+absen = 31
+
+a = nama
+b = kelas
+c = absen
+
+print("Profil:", a, b, c)
+
+# %s string, %d integer, %f desimal
+# %.<digit>f - Bilangan desimal dengan sejumlah digit angka dibelakang koma.
+# %x/%X - Bilangan bulat dalam representasi Hexa (huruf kecil/huruf besar)
+nama = "Dhani"
+tglahir = "5 Okt"
+tahun = 2004.7324582
+print("Nama saya %s, lahir %s %s" % (nama, tglahir, int(tahun)))
+
+c, a = 10, 11
+print("10: %X and 11: %x" % (a, c))
+
+# Input ()
+value = input("ketik angka: ")
+print(value)
+
+# 16 input user
+print("----------Input----------")
+a = input("jumlah: ")
+if int(a) < 50:
+    print("Sampah")
+elif int(a) < 100:
+    print("Monoton")
+else:
+    print("Fantastis")
+
+# 17 Type data
+print("----------Input Data----------")
+data_int = int(input("masukkan data :"))  # data yang dimaksukkan pasti str(string)
+print("data =", data_int, ",type :", type(data_int))
+data_float = float(input("masukkan data :"))
+print("data :", data_float, ",type :", type(data_float))
+data_str = str(input("masukkan data :"))
+print("data :", data_str, ",type :", type(data_str))
+# 17.1
+data_bool = bool(int(input("masukkan data :")))
+print("data :", data_bool, ",type :", type(data_bool))
+
+# 18 #Class/Kelas bisa kita sebut juga Blueprint/Cetakan
+name = input("my name: ")
+
+hobby = input("my hobby: ")
+
+yob = input("year of birth: ")
+yob = int(yob)
+
+age = 2021 - yob
+
+thx = "Thank you"
+# 18.1 #Object/Instance
+print(
+    "\n" "My name is",
+    name,
+    "and my hobby is",
+    hobby,
+    ",",
+    "I was born in",
+    yob,
+    "and my age is",
+    age,
+)
+print(thx)
+
+# Command line argument
+import sys
+
+print("Ada", len(sys.argv), "argumen")
+print("List argumen:", str(sys.argv))
+print("index 1", sys.argv[0])
+
+# 13 RANDOM
+print("----------INPUT RANDOM----------")
+data = input("Input angka: ")
+if int(data) < 10:
+    print("U  G L Y   B A S T A R D !!!")
+elif int(data) < 100:
+    print("S H U T   U P !!!")
+elif int(data) < 1000:
+    print("S I T I   M A R K O N A !!!")
+else:
+    print("W H A T   T H E   F U C K !!!")
+
+# Transformasi int, char, str
+# Upper() & lower()
+x = "aku adalah anak sehat"
+print(len(x))
+x = x.upper()
+print(x)
+x = x.lower()
+print(x)
+
+# Awalan dan Akhiran
+# strip()=kanan-kiri
+# rstrip()=kanan
+# lstrip()=kiri
+kata = "CodeCodeDicodingCodeCode"
+print(kata.strip("Code"))
+
+# startswith() & endswith()
+print("Dicoding Indonesia".startswith("Dicoding"))
+print("Dicoding Indonesia".endswith("Indonesia"))
+
+# Memisah dan menggabung string
+# Join()
+print(" ".join(["Dicoding", "Indonesia", "!"]))
+print("123".join(["Dicoding", "Indonesia", "!"]))
+
+# Split()
+print("Dicoding Indonesia !".split())
+print("Dicoding123Indonesia123!".split("123"))
+print(
+    """Halo,
+aku ikan,
+aku suka sekali menyelam
+aku tinggal di perairan.
+Badanku licin dan renangku cepat.
+Senang berkenalan denganmu.""".split(
+        "\n"
+    )
+)
+
+# Mengganti elemen string
+# replace()
+string = "Ayo belajar Coding di Dicoding"
+print(string.replace("Coding", "Pemrograman"))
+
+string = "Ayo belajar Coding di Dicoding karena Coding adalah bahasa masa depan"
+print(string.replace("Coding", "Pemrograman", 1))
+
+# Pengecekan String
+# isupper(), islower(), isalpha(), isalnum(),
+# isdecimal(), isspace(), istitle()
+kata = "DICODING"
+kata.isupper()
+kata = "Dicoding"
+kata.isupper()
+
+kata = "dicoding"
+kata.islower()
+kata = "Dicoding"
+kata.islower()
+
+print("Dicoding".upper().lower())  # Chain of Method
+print("Dicoding".lower().upper())
+print("DICODING".upper().lower().islower())
+print("DICODING".upper().lower().isupper())
+
+print("dicoding".isalpha())
+
+print("dicoding123".isalnum())
+
+"12345".isdecimal()
+
+"    ".isspace()
+
+"Dicoding Indonesia".istitle()
+
+# Contoh Implementasi dari method "Pengecekan string"
+while True:
+    print("Masukkan nama Anda:")
+    name = input()
+    if name.isalpha():
+        print("Halo", name)
+        break
+    print("Masukkan nama Anda dengan benar.")
+
+# Formatting pada string, zfill()
+# Penerapan zfill pada angka
+# Contoh 1: Penggunaan zfill 5 pada angka satuan
+angka = 5
+print(str(angka).zfill(5))
+# Contoh 2: Penggunaan zfill 5 pada angka ratusan
+angka = 300
+print(str(angka).zfill(5))
+# Contoh 3: Penggunaan zfill 5 pada angka desimal negatif (memiliki koma)
+angka = -0.45
+print(str(angka).zfill(5))
+# Contoh 4: Penggunaan zfill 7 pada angka desimal negatif (memiliki koma)
+angka = -0.45
+print(str(angka).zfill(7))
+
+# Penerapan zfill pada string
+# Contoh 1
+kata = "aku"
+print(kata.zfill(5))
+# Contoh 2
+kata = "kamu"
+print(kata.zfill(5))
+# Contoh 3
+kata = "dirinya"
+print(kata.zfill(5))
+
+# Text potition, rjust(), ijust(), center()
+"Dicoding".rjust(20)
+
+"Dicoding".ljust(20)
+"Dicoding".ljust(20, "!")
+
+"Dicoding".center(20)
+
+# String Literals
+# st1 = 'Jum'at' #incorrect
+st1 = "Jum'at"  # kurang efektif
+print(st1)
+
+st1 = "Jum'at"  #
+# \' Single quote
+# \" Double quote
+# \t Tab
+# \n Newline (line break)
+# \\ Backslash
+print("Halo!\nKapan terakhir kali kita bertemu?\nKita bertemu hari Jum'at yang lalu.")
+multi_line = """Halo!
+Kapan terakhir kali kita bertemu?
+Kita bertemu hari Jum’at yang lalu."""
+print(multi_line)
+
+# Raw Strings
+print(r"Dicoding\tIndonesia")  # Karena menggunakan raw str
+# maka kalimat secara mentah tercetak
+
+# Cara biasa
+a = 2
+a = a * 3
+print(a)
+# Cara efisien
+a = 2
+a *= 3
+print(a)
+
+a = "Hai " * 2
+print(a)
+a = ("Hai ") * 2  # tuple
+print(a)
+a = ["Hai "] * 2  # list
+print(a)
+# a = {"Hai "} * 2#dictionary =error
+# print(a)
+
+# 3 Assignment Operators
+print("----------Assignment Operators----------")
+
+
+def operasi():
+    x = 5
+    if x == 5:
+        x += 5
+        print(f"x = 5:\n x += 5\n  = {x}\n"),
+        x = 5
+        x -= 5
+        print(f"x = 5:\n x -= 5\n  = {x}\n"),
+        x = 5
+        x *= 5
+        print(f"x = 5:\n x *= 5\n  = {x}\n"),
+        x = 5
+        x /= 5
+        print(f"x = 5:\n x /= 5\n  = {x}\n"),
+        x = 5
+        x %= 5
+        print(f"x = 5:\n x %= 5\n  = {x}\n"),
+        x = 5
+        x //= 5
+        print(f"x = 5:\n x //= 5\n  = {x}\n"),
+        x = 5
+        x **= 5
+        print(f"x = 5:\n x **= 5\n  = {x}\n"),
+        x = 5
+        x &= 5
+        print(f"x = 5:\n x &= 5\n  = {x}\n"),
+        x = 5
+        x |= 5
+        print(f"x = 5:\n x |= 5\n  = {x}\n"),
+        x = 5
+        x ^= 5
+        print(f"x = 5:\n x ^= 5\n  = {x}\n"),
+        x = 5
+        x <<= 5
+        print(f"x = 5:\n x <<= 5\n  = {x}\n"),
+        x = 5
+        x >>= 5
+        print(f"x = 5:\n x >>= 5\n  = {x}\n"),
+        return True
+
+
+print(operasi())
+
+# 11 operasi aritmatika
+print("----------OPERASI ARITMATIKA----------")
+a = 11
+b = 4
+# operasi penambahan +
+hasil = a + b
+print(a, "+", b, "=", hasil)
+# operasi pengurangan -
+hasil = a - b
+print(a, "-", b, "=", hasil)
+# operasi perkalian *
+hasil = a * b
+print(a, "*", b, "=", hasil)
+# operasi pembagian /
+hasil = a / b
+print(a, "/", b, "=", hasil)
+# operasi eksponen (pangkat) **
+hasil = a**b  # pemangkatan contoh(2 pangkat 3)
+# tips: untuk akar dua, gunakan pangkat 0.5.
+print(a, "**", b, "=", hasil)
+# operasi floor division //
+hasil = a // b  # membulatkan kebawah dari hasil pembagian(/)
+print(a, "//", b, "=", hasil)
+# operasi modulus %
+hasil = a % b  # sisa pembagian
+print(a, "%", b, "=", hasil)
+
+# 11.1 calculate
+print("----------CALCULATE----------")
+
+
+class calculate:
+    def __init__(self, num1, num2, num3):
+        self.num1 = num1
+        self.num2 = num2
+        self.num3 = num3
+
+    def plus(self):
+        print(
+            f"result of {self.num1}",
+            "+",
+            self.num2,
+            " +",
+            self.num3,
+            " : ",
+            self.num1 + self.num2 + self.num3,
+        )
+
+    def minus(self):
+        print(
+            f"result of {self.num1}",
+            "-",
+            self.num2,
+            " -",
+            self.num3,
+            " : ",
+            self.num1 - self.num2 - self.num3,
+        )
+
+    def times(self):
+        print(
+            f"result of {self.num1}",
+            "*",
+            self.num2,
+            " *",
+            self.num3,
+            " : ",
+            self.num1 * self.num2 * self.num3,
+        )
+
+    def divide(self):
+        print(
+            f"result of {self.num1}",
+            "/",
+            self.num2,
+            " /",
+            self.num3,
+            " : ",
+            self.num1 / self.num2 / self.num3,
+        )
+
+
+calculate = calculate(5, 10, 4)
+calculate.plus()
+calculate.minus()
+calculate.times()
+calculate.divide()
+
+# 12 prioritas operasi, operational precedence
+print("----------PRIORITAS OPERASI----------")
+
+# 1. ()
+# 2. eksponen **
+# 3. perkalian dan teman2nya *,**,/,//,%
+# 4. penambahan dan pengurangan +,-
+
+a = 2
+b = 3
+c = 4
+hasil = a * b**c / b // a % b + c - b
+print(a, "*", b, "**", c, "/", b, "//", a, "%", b, "+", c, "-", b, "=", hasil)
+hasil = (a * b) ** c
+print("(", a, "*", b, ")**", c, "=", hasil)
+hasil = a - b + c * (b / a)
+print(a, "-", b, "+", c, "*(", b, "/", a, ")=", hasil)
+
+# 28
+# Operasi logika atau boolean
+# Tabel kebenaran
+# NOT, OR, AND, XOR
+
+# 12 = 1100, 6 = 0110
+# bilangan 1 yang angkanya bertepatan dengan 1 menjadi 1,
+# maka hasilnya 0100 (4)
+a = 12 & 6
+print(a)
+
+# 12 = 1100, 3 = 0011
+# bilangan 1 yang angkanya bertepatan dengan 1/0 menjadi 1,
+# maka hasilnya 1111 (15)
+a = 12 | 3
+print(a)
+
+# 12 = 1100, 6 = 0110
+# bilangan yang angkanya bertepatan sama menjadi 0,
+# maka hasilnya 1010
+a = 12 ^ 6
+print(a)
+
+print("=====NOT=====")
+x = True
+y = not x  # Negasi x (not(~))
+print(y)
+print("----------")
+x = False
+y = not x  # Negasi x
+print(y)
+
+# Jika ada satu 'True', maka bernilai True (or(|))
+print("=====OR=====")
+x = True
+y = True
+z = x or y
+print(x, "OR", y, "=", z)
+x = True
+y = False
+z = x or y
+print(x, "OR", y, "=", z)
+x = False
+y = True
+z = x or y
+print(x, "OR", y, "=", z)
+x = False
+y = False
+z = x or y
+print(x, "OR", y, "=", z)
+
+# Jika ada satu 'False', maka bernilai False (and(&))
+print("=====AND=====")
+x = True
+y = True
+z = x and y
+print(x, "AND", y, "=", z)
+x = True
+y = False
+z = x and y
+print(x, "AND", y, "=", z)
+x = False
+y = True
+z = x and y
+print(x, "AND", y, "=", z)
+x = False
+y = False
+z = x and y
+print(x, "AND", y, "=", z)
+
+# jika nilai sama maka false dan sebaliknya (xor(^))
+print("=====XOR=====")
+x = True
+y = True
+z = x ^ y
+print(x, "XOR", y, "=", z)
+x = True
+y = False
+z = x ^ y
+print(x, "XOR", y, "=", z)
+x = False
+y = True
+z = x ^ y
+print(x, "XOR", y, "=", z)
+x = False
+y = False
+z = x ^ y
+print(x, "XOR", y, "=", z)
+
+# 19 Temprature Celcius
+Celcius = float(input("Input the Celcius number:"))
+print("Temprature:", Celcius, "°C")
+# 19.1 Celcius ke Reamur -> R=(4/5)C
+Reamur = (4 / 5) * Celcius
+print("Temprature:", Reamur, "°R")
+# 19.2 Celcius ke Fahrenheit -> F=(9/5)C + 32
+Fahrenheit = ((9 / 5) * Celcius) + 32
+print("Temprature:", Fahrenheit, "°F")
+# 19.3 Celcius ke Kelvin -> K=(5/5)C + 273
+Kelvin = ((5 / 5) * Celcius) + 273
+print("Temprature:", Kelvin, "°K")
+print("\n")
+# 19.4 Temprature Reamur
+Reamur = float(input("Input the Reamur number:"))
+print("Temprature:", Reamur, "°R")
+# 19.5 Reamur ke Celcius -> C=(5/4)R
+Celcius = (5 / 4) * Reamur
+print("Temprature:", Celcius, "°C")
+# 19.6 Reamur ke Fahrenheit -> F=(9/4)R + 32
+Fahrenheit = ((9 / 4) * Reamur) + 32
+print("Temprature:", Fahrenheit, "°F")
+# 19.7 Reamur ke Kelvin -> K=(5/4)R + 273
+Kelvin = ((5 / 4) * Reamur) + 273
+print("Temprature:", Kelvin, "°K")
+print("\n")
+# 19.8 Temprature Fahrenheit
+Fahrenheit = float(input("Input the Fahrenheit number:"))
+print("Temprature:", Fahrenheit, "°F")
+# 19.9 Fahrenheit ke Celcius -> C=(5/9)F-32
+Celcius = (5 / 9) * (Fahrenheit - 32)
+print("Temprature:", Celcius, "°C")
+# 19.1.0 Fahrenheit ke Reamur -> R=(4/9)F-32
+Reamur = (4 / 9) * (Fahrenheit - 32)
+print("Temprature:", Reamur, "°R")
+# 19.1.1 Fahrenheit ke Kelvin -> K=((5/9)F-32) + 273
+Kelvin = (5 / 9) * (Fahrenheit - 32) + 273
+print("Temprature:", Kelvin, "°K")
+print("\n")
+# 19.1.2 Temprature Kelvin
+Kelvin = float(input("Input the Kelvin number:"))
+print("Temprature:", Kelvin, "°K")
+# 19.1.3 Kelvin ke Celcius -> C=(5/5)K-372
+Celcius = (5 / 5) * (Kelvin - 273)
+print("Temprature:", Celcius, "°C")
+# 19.1.4 Kelvin ke Reamur -> R=(4/5)K-273
+Reamur = (4 / 5) * (Kelvin - 273)
+print("Temprature:", Reamur, "°R")
+# 19.1.5 Kelvin ke Fahrenheit -> K=((5/5)K-273) + 32
+Fahrenheit = (9 / 5) * (Kelvin - 273) + 32
+print("Temprature:", Fahrenheit, "°F")
+
+# 20 str(string)
+name = "Vengeance De Valens"
+fake_number = "123456789"  # bukan int
+print(name[0])  # mendapatkan value/nilai menggunakan index
+print(name[0:9])  # bisa tanpa 0
+print(name[10:19])  # bisa tanpa 19
+print(name[0:19])  # bisa tanpa index 19 alias 0 saja atau tanpa index hanya colon(:)
+print(fake_number[:])  # intinya hanya bisa digunakan pada str(string)
+print(fake_number + ",", (name[0:9]))
+
+# 21 Operasi Komparasi
+x = 5
+y = 10
+# dibawah ini variabelnya (x,y) bisa diubah menjadi literal (angka)
+# < (lebih kecil)
+hasil = x < y
+print(x, "<", y, "=", hasil)
+# > (lebih besar)
+hasil = x > y
+print(x, ">", y, "=", hasil)
+# <= (lebih kecil atau sama dengan)
+hasil = x <= y
+print(x, "<=", y, "=", hasil)
+# >= (lebih besar atau sama dengan)
+hasil = x >= y
+print(x, ">=", y, "=", hasil)
+# == (sama dengan atau kesetaraan)
+hasil = x == y
+print(x, "==", y, "=", hasil)
+# != (tidak sama dengan)
+hasil = x != y
+print(x, "!=", y, "=", hasil)
+# Note (<,>,<=,>=,==,!=) dapat bekerja pada syntax literal
+# Note (is, is not) tidak efisien bila input nilai literal
+# is (adalah) sebagai komparasi object identity
+x = 5
+y = 10
+print("Data x:", x, "id:", hex(id(x)))
+print("Data y:", y, "id:", hex(id(y)))
+print(x is y)
+# is not (bukan adalah)
+print(x is not y)
+
+# print(int('90+10')) #error
+# eval()
+print(eval("90+10"))  # success
+
+# Operasi pada list, set & string
+# Len()
+contoh_list = [1, 3, 3, 5, 5, 5, 7, 7, 9]
+print(contoh_list)
+print(len(contoh_list))
+
+contoh_set = set([1, 3, 3, 5, 5, 5, 7, 7, 9])
+print(contoh_set)
+print(len(contoh_set))
+
+contoh_string = "Belajar Python"
+print(contoh_string)
+print(len(contoh_string))
+
+# min() dan max()
+angka = [13, 7, 24, 5, 96, 84, 71, 11, 38]
+print(min(angka))
+print(max(angka))
+
+# count()
+genap = [2, 4, 4, 6, 6, 6, 8, 10, 10]
+print(genap.count(6))
+string = "Belajar Python di Dicoding sangat menyenangkan"
+substring = "a"
+print(string.count(substring))
+
+# Penggabungan dan replikasi
+angka = [2, 4, 6, 8]
+huruf = ["P", "Y", "T", "H", "O", "N"]
+gabung = angka + huruf
+print(gabung)
+
+learn = ["P", "Y", "T", "H", "O", "N"]
+replikasi = learn * 2
+print(replikasi)
+
+# Fungsi pengali juga dapat
+# Anda manfaatkan untuk inisialisasi List.
+tujuh = [7] * 7
+print(len(tujuh))
+print(tujuh)
+
+
+# Operator in & not in
+kalimat = "Belajar Python di Dicoding sangat menyenangkan"
+print("Dicoding" in kalimat)
+print("tidak" in kalimat)
+print("Dicoding" not in kalimat)
+print("tidak" not in kalimat)
+
+# Memberikan value to multiple variable (list & tuple)
+# tidak efisien
+data = ["shirt", "white", "L"]
+apparel = data[0]
+color = data[1]
+size = data[2]
+# efisien (nb: jumlah variable & item harus sama)
+data = ["shirt", "white", "L"]  # From List
+apparel, color, size = data
+data = ("shirt", "white", "L")  # From Tuple
+apparel, color, size = data
+
+# Penggunaan assignment pada multi variabel ini dapat
+# Anda gunakan untuk menukar nilai dua atau lebih variabel
+apparel, color = "shirt", "white"
+apparel, color = color, apparel
+print(apparel)
+print(color)
+
+# Sort()  #Mengurutkan int or str
+# Metode sort tidak dapat mengurutkan list yang
+# memiliki angka dan string sekaligus di dalamnya.
+siswa = ["Mahendra Wisnu W", "Dhani Syafreal"]  # str
+print("sebelum", siswa)
+terurut = sorted(siswa)
+print("sesudah", terurut)
+
+angka = [100, 1000, 500, 200, 5]  # int
+angka.sort()
+print(angka)
+
+kendaraan = ["motor", "mobil", "helikopter", "pesawat"]
+kendaraan.sort()
+print(kendaraan)
+
+kendaraan = ["motor", "mobil", "helikopter", "pesawat"]
+kendaraan.sort(reverse=True)  # reverse=True, untuk memperbalik urutan
+print(kendaraan)
+
+# Metode sort menggunakan urutan ASCII, sehingga nilai huruf kapital
+# (uppercase) akan lebih dahulu dibandingkan huruf kecil (lowercase)
+kendaraan = ["motor", "mobil", "helikopter", "Pesawat"]
+kendaraan.sort()
+print(kendaraan)
+# Mengatasinya dapat menggunakan (key=str.lower)
+# hal ini akan menganggap semua objek menggunakan huruf kecil
+kendaraan = ["Motor", "Mobil", "helikopter", "pesawat"]
+kendaraan.sort(key=str.lower)
+print(kendaraan)
+
+# (8421=1111)
+# 2 adalah desimal dijadikan biner = __10
+# geser ke kiri 2x menjadi __10 -> 10__ -> (8)
+# ___ = _ _ _ _ (1 oktet berisi 4 angka biner(1/0))
+a = 2 << 2
+print(a)
+# 9 dijadikan biner = 1001 (8+1)
+# geser ke kanan 1x menjadi _100 (4)
+a = 9 >> 1
+print(a)
+
+# Operator perbandingan (lt, gt, le, ge, eq, ne)
+from operator import *
+
+hijau = 5
+kuning = 10
+print("Kelereng Hijau = {}".format(hijau))
+print("Kelereng Kuning = {}".format(kuning))
+for func in (lt, le, eq, ne, ge, gt):
+    print("{}(hijau, kuning): {}".format(func.__name__, func(hijau, kuning)))
+
+# 6 Control flow
+print("\n")
+print("----------SEQUENTIIAL----------")
+nilai1 = 234
+nilai2 = 123
+nilai3 = 543
+
+print("Data: ", nilai3 + nilai2)
+
+# 7 Control flow
+print("----------DECISION----------")
+data = [
+    32,
+    1,
+    23,
+    2,
+    1,
+    5,
+    14,
+    68,
+    5,
+    45,
+    42,
+    5,
+    7,
+    8,
+    9,
+    15,
+    3,
+    42,
+    3,
+    42,
+    3,
+    4,
+    23,
+    4,
+    23,
+    4,
+    1,
+    56,
+    756,
+    75,
+    67,
+    58,
+    5,
+    4,
+    6,
+    45,
+    47,
+    6,
+    4,
+    63,
+    3,
+    25,
+    8,
+    0,
+    1,
+    223,
+    63,
+    2,
+    34,
+    7,
+    8,
+]
+if len(data) > 50:
+    print("Oke data mencukupi: " + str(len(data)))
+else:
+    print("Eits datanya kurang")
+
+# dinamisme Python
+if False:
+    (
+        9 + "satu"
+    )  # Baris ini tidak dioperasikan, sehingga tidak muncul notifikasi TypeError
+else:
+    9 + 1
+
+# range()
+# Fungsi range() memberikan deret bilangan dengan pola tertentu
+# Fungsi range() dapat memiliki 1-3 parameter (n, p, q)
+for i in range(5):  # 5=n
+    print(i)
+
+for i in range(1, 11):  # 1=n, 11=p
+    print(i)
+
+print([_ for _ in range(0, 20, 5)])  # 0=n, 20=p, 5=q
+
+# Percabangan
+# if, Python menganggap setiap nilai non-zero dan non-null
+# sebagai True dan nilai zero/null sebagai False.
+kelerengku = 10
+if kelerengku:
+    print("Cetak ini jika benar")
+    print(kelerengku)
+
+# else
+tinggi_badan = int(input("Masukkan tinggi badan Anda : "))
+if tinggi_badan >= 160:
+    print("Silakan, Anda boleh masuk")
+else:
+    print("Maaf, Anda belum boleh masuk")
+
+bilangan = 4
+if bilangan % 2 == 0:
+    print("Bilangan {} adalah genap".format(bilangan))
+else:
+    print("Bilangan {} adalah ganjil".format(bilangan))
+
+
+# elif
+nilai = int(input("Masukkan nilai tugas Anda : "))
+if nilai > 80:
+    print("Selamat! Anda mendapat nilai A")
+    print("Pertahankan!")
+elif nilai > 70:
+    print("Hore! Anda mendapat nilai B")
+    print("Tingkatkan!")
+elif nilai > 60:
+    print("Hmm.. Anda mendapat nilai C")
+    print("Ayo semangat!")
+else:
+    print("Waduh, Anda mendapat nilai D")
+    print("Yuk belajar lebih giat lagi!")
+
+
+bilangan = -3
+if bilangan > 0:
+    print("Bilangan {} adalah positif".format(bilangan))
+elif bilangan < 0:
+    print("Bilangan {} adalah negatif".format(bilangan))
+else:
+    print("Bilangan {} adalah nol".format(bilangan))
+# modify
+bilangan = int(input("input angka : "))
+if bilangan % 2 == 0:
+    print("Bilangan {} adalah genap".format(bilangan))
+else:
+    print("Bilangan {} adalah ganjil".format(bilangan))
+
+
+hasil = None
+pesan = hasil or "Tidak ada data"
+print(pesan)
+
+# Perulangan
+# for
+for huruf in "Dicoding":  # Contoh pertama
+    print("Huruf: {}".format(huruf))
+
+flowers = ["mawar", "melati", "anggrek"]
+for flower in flowers:  # Contoh kedua
+    print("Flower: {}".format(flower))
+
+# perulangan berdasarkan indeks atau range dengan memanfaatkan fungsi len():
+flowers = ["mawar", "melati", "anggrek"]
+for index in range(len(flowers)):
+    print("Flowers: {}".format(flowers[index]))
+
+# While, Python tidak memiliki do.. while statement
+# reminder - True di Python termasuk semua nilai non-zero
+
+count = 0
+while count < 7:
+    print("Hitungannya adalah: {}".format(count))
+    count = count + 1
+
+# infinit / infinite loop
+var = 1
+while var == 1:  # This constructs an infinite loop
+    num = input("Masukkan angka: ")
+    print("Anda memasukkan angka: {}".format(num))
+
+
+while True:  # This constructs an infinite loop
+    num = input("Masukkan angka: ")
+    print("Anda memasukkan angka: {}".format(num))
+
+# Perulangan(Loop) bertingkat
+# Tambahkan parameter end pada print
+# untuk mengatur karakter yang mengakhiri pencetakan string/teks Anda.
+# Secara default, karakter end ini adalah newline ('\n').
+for i in range(0, 6):
+    for j in range(0, 6 - i):
+        print("*", end="")
+    print()
+
+# Kontrol perulangan
+# Break
+for huruf in "Dico ding":
+    if huruf == " ":
+        break
+    print("Huruf saat ini: {}".format(huruf))
+
+#
+for i in range(0, 10):
+    for j in range(0, 10):
+        if j > i:
+            print()
+            break
+        else:
+            print("*", end="")
+
+# continue, mengabaikan pernyataan (statement)
+# yang berada antara continue hingga akhir blok perulangan.
+for huruf in "Dico ding":
+    if huruf == " ":
+        continue
+    print("Huruf saat ini: {}".format(huruf))
+
+# 1 loop dan 1 if (tanpa else)
+jumlah_baris = 10
+baris = 0
+bintang = 0
+while baris < jumlah_baris:
+    if (bintang) >= (baris + 1):
+        print()
+        baris = baris + 1
+        bintang = 0
+        continue  # Saat masuk ke if, maka bagian print * diluar if tidak akan dijalankan, langsung ulang ke while
+    print("*", end="")
+    bintang = bintang + 1
+
+# else setelah for
+for item in items:
+    if cari(item):
+        # ditemukan!
+        proses_item()
+        break
+else:
+    # Item tidak ditemukan
+    not_found_in_container()
+
+# struktur pseudocode yang diikuti dalam membuat else pada perulangan
+# if any(something_about(thing) for each thing in container):
+#    do_something(that_thing)
+# else:
+#    no_such_thing()
+
+# Contoh penggunaan dari for-else
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, "equals", x, "*", n / x)
+            break
+
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, "equals", x, "*", n / x)
+            break
+    else:
+        # loop fell through without finding a factor
+        print(n, " adalah bilangan prima")
+
+# Else setelah While
+n = 10
+while n > 0:
+    n = n - 1
+    if n == 7:
+        break
+    print(n)
+else:
+    print("Loop selesai")
+
+# loop akan di break saat nilai n == 7
+n = 10
+while n > 0:
+    n = n - 1
+    print(n)
+else:
+    print("Loop selesai")
+
+# Pass
+def sebuahfungsi():
+    pass
+
+
+# Jika Anda mendeklarasi sebuah fungsi tanpa kode apapun, justru akan terjadi error
+# def sebuahfungsi():
+
+# Contoh pass untuk mengantisipasi exception/kegagalan fungsi
+var1 = ""
+while var1 != "exit":
+    var1 = input("Please enter an integer (type exit to exit): ")
+    print(int(var1))
+
+# Bandingkan dengan pendekatan berikut (mengenai exception, import/library sys,
+# dan try/except akan dibahas pada modul-modul pembelajaran berikutnya
+import sys
+
+data = ""
+while data != "exit":
+    try:
+        data = input("Please enter an integer (type exit to exit): ")
+        print("got integer: {}".format(int(data)))
+    except:
+        if data == "exit":
+            pass  # exit gracefully without prompt any error
+        else:
+            print("error: {}".format(sys.exc_info()[0]))
+
+# List Comprehension (membuat list dengan inline loop dan if)
+# Cara 1
+angka = [1, 2, 3, 4]
+pangkat = []
+for n in angka:
+    pangkat.append(n**2)
+print(pangkat)
+
+# Cara 2 List Comprehension
+angka = [1, 2, 3, 4]
+pangkat = [n**2 for n in angka]
+print(pangkat)
+
+# List comprehension adalah salah satu cara untuk menghasilkan list
+# baru berdasarkan list atau iterables yang telah ada sebelumnya
+# new_list = [expression for_loop_one_or_more conditions]
+
+# Contoh3 menemukan item yang ada di kedua list
+list1 = ["d", "i", "c", "o"]
+list2 = ["d", "i", "n", "g"]
+duplikat = []
+for a in list1:
+    for b in list2:
+        if a == b:
+            duplikat.append(a)
+
+print(duplikat)  # Output ['d','i']
+# bandingkan
+# Contoh4 Implementasi dengan list comprehension
+list1 = ["d", "i", "c", "o"]
+list2 = ["d", "i", "n", "g"]
+duplikat = [a for a in list1 for b in list2 if a == b]
+print(duplikat)  # Output: ['d','i']
+
+# Contoh 5 kecilkan semua huruf
+list_a = ["Hello", "World", "In", "Python"]
+small_list_a = [_.lower() for _ in list_a]
+print(small_list_a)
+
+# Anda tidak perlu bingung saat melihat kode di Internet yang
+# menuliskan seperti contoh di atas, karena garis bawah (underscore)
+# termasuk penamaan variabel yang valid. Secara umum "_"
+# biasa digunakan sebagai throwaway variable (variabel tidak penting).
+list_a = range(1, 10, 2)
+x = [[a**2, a**3] for a in list_a]
+print(x)
+
