@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <h2>Form Input Data</h2>
+    <form id="dataForm">
+        <input type="text" id="name" placeholder="Nama" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <h2>Data Tabel</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
