@@ -2731,3 +2731,566 @@ elif sisi1 != sisi2 != sisi3:
     #if tinggi == "A":
 """
 
+class Node:
+    def __init__(self, title, artist):
+        """
+        Inisialisasi node dengan judul lagu dan artis.
+        """
+        self.title = title
+        self.artist = artist
+        self.next = None
+
+class Playlist:
+    def __init__(self):
+        """
+        Inisialisasi linked list untuk menyimpan lagu-lagu dalam playlist.
+        """
+        self.head = None
+        self.tail = None
+        self.count = 0
+
+    def tambah_lagu(self, title, artist):
+        """
+        Menambahkan lagu baru ke playlist.
+        """
+        new_node = Node(title, artist)
+        if not self.head:
+            self.head = new_node
+        else:
+            self.tail.next = new_node
+        self.tail = new_node
+        self.count += 1
+
+    def putar_lagu_berikutnya(self):
+        """
+        Memutar lagu berikutnya dalam playlist.
+        """
+        if self.head:
+            current = self.head
+            self.head = self.head.next
+            print(f"Memutar: {current.title} - {current.artist}")
+        else:
+            print("Playlist kosong.")
+
+    def hapus_lagu(self, title):
+        """
+        Menghapus lagu dari playlist berdasarkan judul.
+        """
+        current = self.head
+        previous = None
+        while current:
+            if current.title == title:
+                if previous:
+                    previous.next = current.next
+                    if current == self.tail:
+                        self.tail = previous
+                else:
+                    self.head = current.next
+                self.count -= 1
+                return
+            previous = current
+            current = current.next
+        print(f"Lagu '{title}' tidak ditemukan.")
+
+    def tampilkan_daftar_lagu(self):
+        """
+        Menampilkan daftar lagu dalam playlist.
+        """
+        current = self.head
+        while current:
+            print(f"{current.title} - {current.artist}")
+            current = current.next
+
+    def total_jumlah_lagu(self):
+        """
+        Menghitung total jumlah lagu dalam playlist.
+        """
+        return self.count
+
+# Main program
+if __name__ == "__main__":
+    playlist = Playlist()
+
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Lagu")
+        print("2. Putar Lagu Berikutnya")
+        print("3. Hapus Lagu")
+        print("4. Tampilkan Daftar Lagu")
+        print("5. Total Jumlah Lagu")
+        print("6. Keluar")
+
+        pilihan = input("Masukkan pilihan Anda: ")
+
+        if pilihan == "1":
+            title = input("Masukkan judul lagu: ")
+            artist = input("Masukkan nama artis: ")
+            playlist.tambah_lagu(title, artist)
+        elif pilihan == "2":
+            playlist.putar_lagu_berikutnya()
+        elif pilihan == "3":
+            title = input("Masukkan judul lagu yang ingin dihapus: ")
+            playlist.hapus_lagu(title)
+        elif pilihan == "4":
+            print("Daftar Lagu:")
+            playlist.tampilkan_daftar_lagu()
+        elif pilihan == "5":
+            total = playlist.total_jumlah_lagu()
+            print(f"Total jumlah lagu: {total}")
+        elif pilihan == "6":
+            break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+
+"""
+class Node:
+    def __init__(self, task, is_completed=False):
+        
+        #Inisialisasi node dengan data tugas dan status selesai.
+        
+        self.task = task
+        self.is_completed = is_completed
+        self.next = None
+
+class TaskList:
+    def __init__(self):
+        
+        #Inisialisasi linked list untuk menyimpan tugas.
+        
+        self.head = None
+        self.count = 0
+
+    def tambah_tugas(self, task):
+        
+        #Menambahkan tugas baru ke linked list.
+        
+        new_node = Node(task)
+        new_node.next = self.head
+        self.head = new_node
+        self.count += 1
+
+    def tandai_selesai(self, task):
+        
+        #Menandai tugas sebagai selesai.
+        
+        current = self.head
+        while current:
+            if current.task == task:
+                current.is_completed = True
+                return
+            current = current.next
+        print(f"Tugas '{task}' tidak ditemukan.")
+
+    def hapus_tugas(self, task):
+        
+        #Menghapus tugas dari linked list.
+        
+        current = self.head
+        previous = None
+        while current:
+            if current.task == task:
+                if previous:
+                    previous.next = current.next
+                else:
+                    self.head = current.next
+                self.count -= 1
+                return
+            previous = current
+            current = current.next
+        print(f"Tugas '{task}' tidak ditemukan.")
+
+    def tampilkan_belum_selesai(self):
+        
+        #Menampilkan daftar tugas yang belum selesai.
+        
+        current = self.head
+        while current:
+            if not current.is_completed:
+                print(f"Tugas: {current.task}")
+            current = current.next
+
+    def tampilkan_selesai(self):
+        
+        #Menampilkan daftar tugas yang sudah selesai.
+        
+        current = self.head
+        while current:
+            if current.is_completed:
+                print(f"Tugas: {current.task}")
+            current = current.next
+
+# Main program
+if __name__ == "__main__":
+    task_list = TaskList()
+
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Tugas")
+        print("2. Tandai Selesai")
+        print("3. Hapus Tugas")
+        print("4. Tampilkan Daftar Tugas Belum Selesai")
+        print("5. Tampilkan Daftar Tugas Selesai")
+        print("6. Keluar")
+
+        pilihan = input("Masukkan pilihan Anda: ")
+
+        if pilihan == "1":
+            task = input("Masukkan nama tugas: ")
+            task_list.tambah_tugas(task)
+        elif pilihan == "2":
+            task = input("Masukkan nama tugas yang telah selesai: ")
+            task_list.tandai_selesai(task)
+        elif pilihan == "3":
+            task = input("Masukkan nama tugas yang ingin dihapus: ")
+            task_list.hapus_tugas(task)
+        elif pilihan == "4":
+            print("Daftar Tugas Belum Selesai:")
+            task_list.tampilkan_belum_selesai()
+        elif pilihan == "5":
+            print("Daftar Tugas Selesai:")
+            task_list.tampilkan_selesai()
+        elif pilihan == "6":
+            break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+
+
+class Node:
+    def __init__(self, suhu):
+        self.suhu = suhu  # Nilai suhu
+        self.next = None  # Pointer ke node berikutnya dalam linked list
+
+class DataSuhu:
+    def __init__(self):
+        self.head = None  # Node pertama dalam linked list
+        self.count = 0  # Jumlah total data suhu dalam daftar
+
+    def __len__(self):
+        return self.count  # Mengembalikan jumlah total data suhu
+
+    def tambah_suhu(self, suhu):
+        node_baru = Node(suhu)  # Membuat node baru dengan nilai suhu
+        node_baru.next = self.head  # Mengatur node baru sebagai node pertama dalam linked list
+        self.head = node_baru  # Mengatur node baru sebagai node pertama
+        self.count += 1  # Menambah jumlah total data suhu
+
+    def hapus_suhu(self, suhu):
+        current = self.head
+        previous = None
+        while current:
+            if current.suhu == suhu:  # Jika suhu cocok
+                if previous:
+                    previous.next = current.next  # Menghapus node dengan mengubah pointer node sebelumnya
+                else:
+                    self.head = current.next  # Menghapus node pertama
+                self.count -= 1  # Mengurangi jumlah total data suhu
+                return
+            previous = current
+            current = current.next
+        print(f"Data suhu '{suhu}' tidak ditemukan.")
+
+    def tampilkan_suhu(self):
+        current = self.head
+        while current:
+            print(f"Suhu: {current.suhu}")  # Menampilkan nilai suhu
+            current = current.next  # Pindah ke node berikutnya
+
+    def rata_rata_suhu(self):
+        total_suhu = 0
+        current = self.head
+        while current:
+            total_suhu += current.suhu  # Menambahkan nilai suhu
+            current = current.next
+        if self.count == 0:
+            return 0  # Mengembalikan 0 jika tidak ada data suhu
+        return total_suhu / self.count  # Mengembalikan rata-rata suhu
+
+# Program Utama
+if __name__ == "__main__":
+    data_suhu = DataSuhu()  # Membuat objek DataSuhu
+
+    # Loop utama untuk menampilkan menu dan memproses pilihan pengguna
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Data Suhu")
+        print("2. Hapus Data Suhu")
+        print("3. Tampilkan Seluruh Data Suhu")
+        print("4. Hitung Rata-rata Suhu")
+        print("5. Keluar")
+
+        pilihan = input("Masukkan pilihan Anda: ")  # Meminta input pilihan dari pengguna
+
+        if pilihan == "1":
+            suhu = float(input("Masukkan nilai suhu: "))
+            data_suhu.tambah_suhu(suhu)  # Memanggil metode tambah_suhu
+        elif pilihan == "2":
+            suhu = float(input("Masukkan nilai suhu yang ingin dihapus: "))
+            data_suhu.hapus_suhu(suhu)  # Memanggil metode hapus_suhu
+        elif pilihan == "3":
+            print("Data Suhu:")
+            data_suhu.tampilkan_suhu()  # Memanggil metode tampilkan_suhu
+        elif pilihan == "4":
+            rata_rata = data_suhu.rata_rata_suhu()
+            print(f"Rata-rata suhu: {rata_rata}")  # Menampilkan rata-rata suhu
+        elif pilihan == "5":
+            break  # Keluar dari program
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")  # Pesan jika pilihan tidak valid
+
+
+class Node:
+    def __init__(self, nama, nilai=None):
+        self.nama = nama  # Nama mahasiswa
+        self.nilai = nilai  # Nilai ujian, nilai default adalah None
+        self.next = None  # Pointer ke node berikutnya dalam linked list
+
+class DaftarMahasiswa:
+    def __init__(self):
+        self.head = None  # Node pertama dalam linked list
+        self.count = 0  # Jumlah total mahasiswa dalam daftar
+
+    def __len__(self):
+        return self.count  # Mengembalikan jumlah total mahasiswa
+
+    def tambah_mahasiswa(self, nama):
+        node_baru = Node(nama)  # Membuat node baru dengan nama mahasiswa
+        node_baru.next = self.head  # Mengatur node baru sebagai node pertama dalam linked list
+        self.head = node_baru  # Mengatur node baru sebagai node pertama
+        self.count += 1  # Menambah jumlah total mahasiswa
+
+    def tambah_nilai(self, nama, nilai):
+        current = self.head
+        while current:
+            if current.nama == nama:  # Jika nama mahasiswa cocok
+                current.nilai = nilai  # Menetapkan nilai ujian
+                return
+            current = current.next
+        print(f"Mahasiswa '{nama}' tidak ditemukan.")
+
+    def hapus_mahasiswa(self, nama):
+        current = self.head
+        previous = None
+        while current:
+            if current.nama == nama:  # Jika nama mahasiswa cocok
+                if previous:
+                    previous.next = current.next  # Menghapus node dengan mengubah pointer node sebelumnya
+                else:
+                    self.head = current.next  # Menghapus node pertama
+                self.count -= 1  # Mengurangi jumlah total mahasiswa
+                return
+            previous = current
+            current = current.next
+        print(f"Mahasiswa '{nama}' tidak ditemukan.")
+
+    def tampilkan_mahasiswa(self):
+        current = self.head
+        while current:
+            print(f"Nama: {current.nama}, Nilai: {current.nilai}")  # Menampilkan nama dan nilai ujian
+            current = current.next  # Pindah ke node berikutnya
+
+    def rata_rata_nilai(self):
+        total_nilai = 0
+        current = self.head
+        while current:
+            if current.nilai is not None:
+                total_nilai += current.nilai  # Menambahkan nilai ujian yang tidak None
+            current = current.next
+        if self.count == 0:
+            return 0  # Mengembalikan 0 jika tidak ada mahasiswa
+        return total_nilai / self.count  # Mengembalikan rata-rata nilai ujian
+
+# Program Utama
+if __name__ == "__main__":
+    daftar_mahasiswa = DaftarMahasiswa()  # Membuat objek DaftarMahasiswa
+    
+    # Loop utama untuk menampilkan menu dan memproses pilihan pengguna
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Mahasiswa")
+        print("2. Tambah Nilai Ujian")
+        print("3. Hapus Data Mahasiswa")
+        print("4. Tampilkan Seluruh Daftar Mahasiswa")
+        print("5. Hitung Nilai Rata-rata Ujian")
+        print("6. Keluar")
+
+        pilihan = input("Masukkan pilihan Anda: ")  # Meminta input pilihan dari pengguna
+
+        if pilihan == "1":
+            nama = input("Masukkan nama mahasiswa: ")
+            daftar_mahasiswa.tambah_mahasiswa(nama)  # Memanggil metode tambah_mahasiswa
+        elif pilihan == "2":
+            nama = input("Masukkan nama mahasiswa yang ingin ditambahkan nilai: ")
+            nilai = float(input("Masukkan nilai ujian: "))
+            daftar_mahasiswa.tambah_nilai(nama, nilai)  # Memanggil metode tambah_nilai
+        elif pilihan == "3":
+            nama = input("Masukkan nama mahasiswa yang ingin dihapus: ")
+            daftar_mahasiswa.hapus_mahasiswa(nama)  # Memanggil metode hapus_mahasiswa
+        elif pilihan == "4":
+            print("Daftar Mahasiswa:")
+            daftar_mahasiswa.tampilkan_mahasiswa()  # Memanggil metode tampilkan_mahasiswa
+        elif pilihan == "5":
+            rata_rata = daftar_mahasiswa.rata_rata_nilai()
+            print(f"Rata-rata nilai ujian: {rata_rata}")  # Menampilkan rata-rata nilai ujian
+        elif pilihan == "6":
+            break  # Keluar dari program
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")  # Pesan jika pilihan tidak valid
+
+
+# Definisi kelas Node untuk merepresentasikan node dalam linked list
+class Node:
+    def __init__(self, data):
+        self.data = data  # Data yang disimpan dalam node
+        self.next = None   # Pointer yang menunjukkan ke node berikutnya dalam linked list
+
+# Definisi kelas DaftarBuah untuk menyimpan daftar buah dalam linked list
+class DaftarBuah:
+    def __init__(self):
+        self.head = None  # Node pertama dalam linked list
+        self.count = 0    # Jumlah total buah dalam daftar
+
+    # Metode khusus untuk mengimplementasikan fungsi len() pada objek DaftarBuah
+    def __len__(self):
+        return self.count
+
+    # Metode untuk menambahkan buah baru ke dalam linked list
+    def tambah_buah(self, nama):
+        node_baru = Node(nama)  # Membuat node baru dengan data nama
+        node_baru.next = self.head  # Mengatur node baru sebagai node pertama dalam linked list
+        self.head = node_baru  # Mengatur node baru sebagai node pertama
+        self.count += 1  # Menambah jumlah total buah
+
+    # Metode untuk menghapus buah dari linked list berdasarkan nama
+    def hapus_buah(self, nama):
+        sekarang = self.head  # Node yang sedang diperiksa
+        sebelumnya = None  # Node sebelum node yang sedang diperiksa
+        while sekarang:
+            if sekarang.data == nama:  # Jika data node sama dengan nama yang dicari
+                if sebelumnya:
+                    sebelumnya.next = sekarang.next  # Mengubah pointer node sebelumnya untuk mengabaikan node yang dihapus
+                else:
+                    self.head = sekarang.next  # Mengubah node pertama jika node yang dihapus adalah node pertama
+                self.count -= 1  # Mengurangi jumlah total buah
+                return
+            sebelumnya = sekarang
+            sekarang = sekarang.next
+        print(f"Buah '{nama}' tidak ditemukan.")  # Pesan jika buah tidak ditemukan
+
+    # Metode untuk menampilkan daftar buah dalam linked list
+    def tampilkan_buah(self):
+        sekarang = self.head  # Node yang sedang ditampilkan
+        while sekarang:
+            print(sekarang.data)  # Menampilkan data buah
+            sekarang = sekarang.next  # Berpindah ke node berikutnya
+
+# Program Utama
+if __name__ == "__main__":
+    daftar_buah = DaftarBuah()  # Membuat objek daftar_buah dari kelas DaftarBuah
+    
+    # Loop utama untuk menampilkan menu dan memproses pilihan pengguna
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Buah")
+        print("2. Hapus Buah")
+        print("3. Tampilkan Daftar Buah")
+        print("4. Total Buah")
+        print("5. Keluar")
+
+        pilihan = input("Masukkan pilihan Anda: ")  # Meminta input pilihan dari pengguna
+
+        if pilihan == "1":
+            nama = input("Masukkan nama buah: ")
+            daftar_buah.tambah_buah(nama)  # Memanggil metode tambah_buah
+        elif pilihan == "2":
+            nama = input("Masukkan nama buah yang ingin dihapus: ")
+            daftar_buah.hapus_buah(nama)  # Memanggil metode hapus_buah
+        elif pilihan == "3":
+            print("Daftar Buah:")
+            daftar_buah.tampilkan_buah()  # Memanggil metode tampilkan_buah
+        elif pilihan == "4":
+            total = len(daftar_buah)
+            print(f"Total jumlah buah: {total}")  # Menampilkan total jumlah buah
+        elif pilihan == "5":
+            break  # Keluar dari program
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")  # Pesan jika pilihan tidak valid
+"""
+"""
+# Definisi kelas Node untuk merepresentasikan node dalam linked list
+class Node:
+    def __init__(self, data):
+        self.data = data  # Data yang disimpan dalam node
+        self.next = None   # Pointer yang menunjukkan ke node berikutnya dalam linked list
+
+# Definisi kelas DaftarKaryawan untuk menyimpan daftar karyawan dalam linked list
+class DaftarKaryawan:
+    def __init__(self):
+        self.head = None  # Node pertama dalam linked list
+        self.count = 0    # Jumlah total karyawan dalam daftar
+
+    # Metode khusus untuk mengimplementasikan fungsi len() pada objek DaftarKaryawan
+    def __len__(self):
+        return self.count
+
+    # Metode untuk menambahkan karyawan baru ke dalam linked list
+    def tambah_karyawan(self, nama):
+        node_baru = Node(nama)  # Membuat node baru dengan data nama
+        node_baru.next = self.head  # Mengatur node baru sebagai node pertama dalam linked list
+        self.head = node_baru  # Mengatur node baru sebagai node pertama
+        self.count += 1  # Menambah jumlah total karyawan
+
+    # Metode untuk menghapus karyawan dari linked list berdasarkan nama
+    def hapus_karyawan(self, nama):
+        sekarang = self.head  # Node yang sedang diperiksa
+        sebelumnya = None  # Node sebelum node yang sedang diperiksa
+        while sekarang:
+            if sekarang.data == nama:  # Jika data node sama dengan nama yang dicari
+                if sebelumnya:
+                    sebelumnya.next = sekarang.next  # Mengubah pointer node sebelumnya untuk mengabaikan node yang dihapus
+                else:
+                    self.head = sekarang.next  # Mengubah node pertama jika node yang dihapus adalah node pertama
+                self.count -= 1  # Mengurangi jumlah total karyawan
+                return
+            sebelumnya = sekarang
+            sekarang = sekarang.next
+        print(f"Karyawan '{nama}' tidak ditemukan.")  # Pesan jika karyawan tidak ditemukan
+
+    # Metode untuk menampilkan daftar karyawan dalam linked list
+    def tampilkan_karyawan(self):
+        sekarang = self.head  # Node yang sedang ditampilkan
+        while sekarang:
+            print(sekarang.data)  # Menampilkan data karyawan
+            sekarang = sekarang.next  # Berpindah ke node berikutnya
+
+# Program Utama
+if __name__ == "__main__":
+    daftar_karyawan = DaftarKaryawan()  # Membuat objek daftar_karyawan dari kelas DaftarKaryawan
+    
+    # Loop utama untuk menampilkan menu dan memproses pilihan pengguna
+    while True:
+        print("\nMenu:")
+        print("1. Tambah Karyawan")
+        print("2. Hapus Karyawan")
+        print("3. Tampilkan Daftar Karyawan")
+        print("4. Total Karyawan")
+        print("5. Keluar")
+
+        pilihan = input("Masukkan pilihan Anda: ")  # Meminta input pilihan dari pengguna
+
+        if pilihan == "1":
+            nama = input("Masukkan nama karyawan: ")
+            daftar_karyawan.tambah_karyawan(nama)  # Memanggil metode tambah_karyawan
+        elif pilihan == "2":
+            nama = input("Masukkan nama karyawan yang ingin dihapus: ")
+            daftar_karyawan.hapus_karyawan(nama)  # Memanggil metode hapus_karyawan
+        elif pilihan == "3":
+            print("Daftar Karyawan:")
+            daftar_karyawan.tampilkan_karyawan()  # Memanggil metode tampilkan_karyawan
+        elif pilihan == "4":
+            total = len(daftar_karyawan)
+            print(f"Total jumlah karyawan: {total}")  # Menampilkan total jumlah karyawan
+        elif pilihan == "5":
+            break  # Keluar dari program
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")  # Pesan jika pilihan tidak valid
+"""
