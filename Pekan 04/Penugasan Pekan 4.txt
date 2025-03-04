@@ -1,1 +1,6 @@
+Penugasan:
 
+Tugas styling halaman HTML (Tugas pekan 3) yang sudah dibuat dengan CSS dasar.
+Commit hasil tugas ke GitHub.
+
+Sumber belajar: https://www.w3schools.com/css/default.asp 
