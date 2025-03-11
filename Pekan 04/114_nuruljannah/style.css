@@ -1,0 +1,27 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #817777;
+  }
+
+  .content {
+    text-indent: 1.27cm;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ff0000;
+  }
+ 
+  .daftar-pustaka {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  marquee {
+    font-size: 72px;
+    color: rgb(255, 213, 0);
+    font-weight: bold;
+  }
+  
