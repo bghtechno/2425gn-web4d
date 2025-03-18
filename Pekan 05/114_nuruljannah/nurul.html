@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Web Sederhana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .header {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;;
+        }
+        .footer {
+            color: rgb(104, 103, 103);
+            text-align: center;
+            padding: 15px;
+            font-size: 7px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        
+        .nav {
+            background: rgb(60, 138, 217);
+            padding: 10px;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 30%;
+            background: #cce5ff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .main-content {
+            width: 70%;
+            background: rgb(0, 200, 255);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Hi, Selamat Datang:)</div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Tentang</a>
+            <a href="#">Layanan</a>
+            <a href="#">Kontak</a>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <h3>Kategori & Info</h3>
+                <ul>
+                    Berita, </li>
+                    Artikel, </li>
+                    Pengumuman, </li>
+                    Event</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <h3>Konten Utama</h3>
+                <p>Ini adalah bagian utama dari halaman web yang menampilkan konten utama.</p>
+            </div>
+        </div>
+        <div class="footer">&copy; 2025 Nurul Jannah 4D</div>
+    </div>
+</body>
+</html>
