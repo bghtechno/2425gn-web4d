@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border: 5px solid #333;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header, .footer {
+            background: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 30%;
+            background: #ddd;
+            padding: 15px;
+            border: 3px solid #999;
+            border-radius: 5px;
+        }
+        .main {
+            flex: 1;
+            background: #ffffff;
+            padding: 15px;
+            border: 3px solid #999;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content">
+            <div class="sidebar">Sidebar</div>
+            <div class="main">Main Content</div>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
