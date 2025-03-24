@@ -1,0 +1,72 @@
+/* Reset browser default margin dan padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "nav nav"
+    "main sidebar"
+    "footer footer";
+  grid-template-rows: 50px 40px 1fr 30px;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #3e8e41;
+  margin: 5px;
+}
+
+/* Navigation */
+.nav {
+  grid-area: nav;
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #0b7dda;
+  margin: 5px;
+}
+
+/* Main Content */
+.main-content {
+  grid-area: main;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 2px solid #ccc;
+  margin: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ff9800;
+  padding: 20px;
+  border: 2px solid #e68a00;
+  margin: 5px;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background-color: #555;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #444;
+  margin: 5px;
+}
