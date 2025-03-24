@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Zakiya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="nav">
+        <div class="user-info">
+            <img src="Za.jpg" id="profile-pic" alt="Foto Profil">
+            <span id="user-name">Guest</span>
+        </div>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="overlay">
+            <h1>Selamat Datang</h1>
+            <p>Saya seorang Mahasiswi Pendidikan Informatika di Universitas Trunojoyo Madura</p>
+        </div>
+    </header>
+
+    <!-- Profil -->
+    <section class="profil" id="profil">
+        <h2>Profil Saya</h2>
+        <div class="profil-container">
+            <div class="card">
+                <h3>Nama</h3>
+                <p><strong>Kuni Zakiya Bilgis</strong></p>
+            </div>
+            <div class="card">
+                <h3>Universitas</h3>
+                <p><strong>Universitas Trunojoyo Madura</strong></p>
+            </div>
+            <div class="card">
+                <h3>Program Studi</h3>
+                <p><strong>Pendidikan Informatika</strong></p>
+            </div>
+            <div class="card">
+                <h3>Kelas</h3>
+                <p><strong>4D</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Kuni Zakiya Bilgis. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        var loggedUser = localStorage.getItem("loggedUser");
+        if (loggedUser) {
+            document.getElementById("user-name").textContent = loggedUser;
+        }
+    </script>
+
+</body>
+</html>
