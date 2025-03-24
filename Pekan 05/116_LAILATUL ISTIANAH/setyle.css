@@ -1,0 +1,78 @@
+/* Reset Box Model */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #0275d8;
+    color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Navigasi */
+.nav {
+    background-color: #0056b3;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    color: #0275d8;
+    margin-bottom: 10px;
+}
+
+.profil, .visi-misi {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profil p, .visi-misi p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #0275d8;
+    color: white;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
