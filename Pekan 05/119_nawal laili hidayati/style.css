@@ -1,0 +1,142 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya dasar untuk body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0f2ff, #ffdde1);
+    text-align: center;
+    color: #61388a;
+}
+
+/* Header */
+.header {
+    background-color: #80002f;
+    color: rgb(42, 5, 65);
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigasi */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(160, 0, 204, 0.8);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav a {
+    color: rgba(255, 255, 255, 0.616);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.977);
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Konten utama */
+.container {
+    margin: 50px auto;
+    padding: 30px;
+    background: rgb(255, 255, 255);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.container h2 {
+    font-size: 28px;
+    color: #cc2acc;
+    margin-bottom: 15px;
+}
+
+.container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #236d81;
+}
+
+/* Footer */
+.footer {
+    background-color: #00801e;
+    color: rgba(255, 255, 255, 0.801);
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+        padding: 10px 20px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
