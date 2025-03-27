@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body dengan background gradient */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #fb18c6, #73f3d9);
+        }
+
+        /* Kotak login */
+        .login-container {
+            background: rgb(186, 248, 42);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Judul login */
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #004080;
+        }
+
+        /* Input field */
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Tombol login */
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Efek hover tombol */
+        .login-container button:hover {
+            background-color: #002d5b;
+        }
+
+        /* Pesan error */
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <p class="error">Username atau Password salah!</p>
+        <input type="text" id="username" placeholder="Masukkan Username">
+        <input type="password" id="password" placeholder="Masukkan Password">
+        <button onclick="login()">Masuk</button>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.querySelector(".error");
+
+            // Cek username dan password
+            if (username === "Arinal" && password === "1111") {
+                errorMessage.style.display = "none";
+                window.location.href = "index.html"; // Redirect ke halaman beranda
+            } else {
+                errorMessage.style.display = "block";
+                errorMessage.innerText = "Username atau password salah!";
+            }
+        }
+    </script>
+
+</body>
+</html>
