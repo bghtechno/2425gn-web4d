@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flexbox</title>
+    <link rel="stylesheet" href="pekan6.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Halaman Web Ini🤍</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Berita, Artikel, dsb.</p>
+        </aside>
+        <section class="content">
+            <h2>Konten Utama</h2>
+            <p>Bagian utama dari website yang berisi informasi penting.</p>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Rena 4D. Hak Cipta Dilindungi.
+    </footer>
+</body>
+</html>
