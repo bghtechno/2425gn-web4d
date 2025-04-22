@@ -1,0 +1,33 @@
+<?php
+// Array data produk
+$produk = [
+    ["nama" => "Laptop", "harga" => 8500000],
+    ["nama" => "Keyboard", "harga" => 250000],
+    ["nama" => "Mouse", "harga" => 150000],
+    ["nama" => "Monitor", "harga" => 1900000]
+];
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Produk</title>
+</head>
+<body>
+    <h1>Daftar Produk</h1>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>No</th>
+            <th>Nama Produk</th>
+            <th>Harga (Rp)</th>
+        </tr>
+        <?php foreach($produk as $index => $item): ?>
+        <tr>
+            <td><?= $index + 1 ?></td>
+            <td><?= $item["nama"] ?></td>
+            <td><?= number_format($item["harga"], 0, ',', '.') ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</body>
+</html>
