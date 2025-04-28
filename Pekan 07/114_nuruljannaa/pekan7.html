@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validasi Formulir</title>
+</head>
+<body>
+
+<h2>Formulir Pendaftaran</h2>
+
+<form onsubmit="return validasiForm()">
+  Nama: <input type="text" id="nama"><br><br>
+  Email: <input type="text" id="email"><br><br>
+  <input type="submit" value="Kirim">
+</form>
+
+<script>
+function validasiForm() {
+  var nama = document.getElementById("nama").value;
+  var email = document.getElementById("email").value;
+  
+  if (nama == "" || email == "") {
+    alert("Nama dan Email wajib diisi!");
+    return false;
+  }
+  alert("Formulir berhasil dikirim. Terima kasih, " + nama + "!");
+  return true;
+}
+</script>
+
+</body>
+</html>
