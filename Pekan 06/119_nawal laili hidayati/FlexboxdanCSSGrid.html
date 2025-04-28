@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Responsif Flexbox dan Grid</title>
+  <style>
+    /* Reset dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Layout Umum */
+    .header, .footer {
+      background-color: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .nav {
+      background: #90e0ef;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #023e8a;
+      font-weight: bold;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .content {
+      background: #caf0f8;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .sidebar {
+      background: #ade8f4;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Selamat Datang di Website Responsif</h1>
+  </header>
+
+  <nav class="nav">
+    <a href="#">Beranda</a>
+    <a href="#">Tentang</a>
+    <a href="#">Layanan</a>
+    <a href="#">Kontak</a>
+  </nav>
+
+  <main class="main">
+    <section class="content">
+      <h2>Artikel Utama</h2>
+      <p>Ini adalah contoh konten utama yang menggunakan Flexbox dan Grid untuk membuat layout responsif dan dinamis.</p>
+    </section>
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Tambahkan informasi tambahan di sini.</p>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Nawal Laili Hidayati.</p>
+  </footer>
+
+</body>
+</html>
