@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Data dengan Validasi</title>
+    <style>
+        .error { color: red; font-size: 0.9em; }
+        table { margin-top: 20px; }
+        textarea { width: 200px; height: 60px; }
+    </style>
+</head>
+<body>
+    <h1>Form Input Data</h1>
+    <form id="dataForm">
+        <div>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" required>
+            <span id="namaError" class="error"></span>
+        </div>
+        <br>
+        <div>
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" required></textarea>
+            <span id="alamatError" class="error"></span>
+        </div>
+        <br>
+        <div>
+            <label for="kota">Kota:</label>
+            <select id="kota" required>
+                <option value="">-- Pilih Kota --</option>
+                <option value="Sumenep">Sumenep</option>
+                <option value="Pamekasan">Pamekasan</option>
+                <option value="Sampang">Sampang</option>
+                <option value="Bangkalan">Bangkalan</option>
+            </select>
+            <span id="kotaError" class="error"></span>
+        </div>
+        <br>
+        <input type="submit" value="Kirim Data">
+    </form>
+
+    <h2>Data yang Sudah Dimasukkan:</h2>
+    <table border="1" id="dataTable">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Kota</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <p><a href="latihan1.html">Kembali ke Halaman Utama</a></p>
+
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Reset pesan error
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            
+            // Validasi input
+            let isValid = true;
+            const nama = document.getElementById("nama").value.trim();
+            const alamat = document.getElementById("alamat").value.trim();
+            const kota = document.getElementById("kota").value;
+            
+            if (nama === "") {
+                document.getElementById("namaError").textContent = "Nama wajib diisi!";
+                isValid = false;
+            }
+            
+            if (alamat === "") {
+                document.getElementById("alamatError").textContent = "Alamat wajib diisi!";
+                isValid = false;
+            }
+            
+            if (kota === "") {
+                document.getElementById("kotaError").textContent = "Kota wajib dipilih!";
+                isValid = false;
+            }
+            
+            if (!isValid) return;
+            
+            // Tambahkan data ke tabel
+            const tableBody = document.querySelector("#dataTable tbody");
+            const newRow = tableBody.insertRow();
+            
+            newRow.insertCell(0).textContent = nama;
+            newRow.insertCell(1).textContent = alamat;
+            newRow.insertCell(2).textContent = kota;
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
