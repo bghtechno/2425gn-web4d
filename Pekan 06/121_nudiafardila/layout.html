@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Layout HTML</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 1em;
+            width: 200px;
+            min-height: 100%;
+        }
+        main {
+            flex: 1;
+            padding: 1em;
+            background: #f4f4f4;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Header</h1>
+</header>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#" style="color: white;">Home</a></li>
+            <li><a href="#" style="color: white;">About</a></li>
+            <li><a href="#" style="color: white;">Services</a></li>
+            <li><a href="#" style="color: white;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Judul Konten</h2>
+        <p>Ini adalah bagian utama konten.</p>
+    </main>
+</div>
+
+<footer>
+    <p>Hak Cipta © 2025</p>
+</footer>
+
+</body>
+</html>
