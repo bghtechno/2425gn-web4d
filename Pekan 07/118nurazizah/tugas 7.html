@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pendaftaran Lucu</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to right, #FFD6E8, #C8F4FF);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: #fff9fb;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            border: 2px dashed #ffb6c1;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ffe0f0;
+            border-radius: 10px;
+            background-color: #fff0f5;
+        }
+
+        button {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffa6c1;
+        }
+
+        #pesan {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Pendaftaran 🎀</h2>
+
+<form id="formPendaftaran">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" placeholder="Tulis nama kamu... ">
+
+    <label for="umur">Umur:</label>
+    <input type="number" id="umur" placeholder="Tulis umur kamu... 🎂">
+
+    <button type="submit">Daftar Yuk! 🌸</button>
+</form>
+
+<p id="pesan"></p>
+
+<script>
+    const form = document.getElementById('formPendaftaran');
+    const pesan = document.getElementById('pesan');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let nama = document.getElementById('nama').value.trim();
+        let umur = document.getElementById('umur').value.trim();
+
+        if (nama === '' || umur === '') {
+            pesan.style.color = '#ff4d6d';
+            pesan.textContent = 'Nama dan umur wajib diisi yaa! 😅';
+        } else if (isNaN(umur) || umur <= 0) {
+            pesan.style.color = '#ff4d6d';
+            pesan.textContent = 'Umur harus angka positif, dong! 🙈';
+        } else {
+            pesan.style.color = '#28a745';
+            pesan.textContent = `Yeay! Selamat datang, ${nama}! 🌟`;
+        }
+    });
+</script>
+
+</body>
+</html>
